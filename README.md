@@ -1,13 +1,13 @@
 # Sudoku-Solver
 Description
-The Sudoku Solver is a C++ program that solves a given Sudoku puzzle using a backtracking algorithm. The program allows users to input the puzzle either manually or through a file.
+The Sudoku Solver is an advanced C++ program designed to solve any given Sudoku puzzle using a recursive backtracking algorithm. The program offers a user-friendly interface for inputting puzzles either manually or through a file, ensuring flexibility and ease of use.
 
 Features
-Manual Input: Users can input the Sudoku puzzle manually.
-File Input: Users can input the Sudoku puzzle from a file.
-Grid Display: The program displays the Sudoku grid before and after solving the puzzle.
-Validation: The program checks the validity of the grid during input and solving process.
-Backtracking Algorithm: Utilizes a recursive backtracking algorithm to solve the puzzle.
+Manual Input: Allows users to input the Sudoku puzzle manually with a simple and intuitive prompt.
+File Input: Users can input the Sudoku puzzle from a file, facilitating ease of use and batch processing.
+Grid Display: Clearly displays the Sudoku grid before and after solving the puzzle.
+Validation: Ensures all inputs and steps during the solving process are valid, preventing errors and ensuring a correct solution.
+Backtracking Algorithm: Utilizes an efficient recursive backtracking algorithm to find the solution, showcasing advanced problem-solving techniques.
 
 Installation
 1. Clone the repository:
@@ -19,28 +19,32 @@ Usage
    g++ -o SudokuSolver sudoku_solver.cpp
 2. Run the program:
    ./SudokuSolver
-Input
-The program supports two types of inputs:
+   
+Technical Details
+SudokuGrid Class
+The SudokuGrid class encapsulates the entire Sudoku grid and related operations. This class is pivotal as it provides the structure and methods required to handle the Sudoku puzzle.
 
-1. Manual Input:
+Attributes:
 
-The user will be prompted to enter the Sudoku grid values manually.
-Enter 0 for empty cells.
+int grid[9][9]; - A 2D array to store the values of the Sudoku grid.
 
-2. File Input:
+Methods:
 
-The user will be prompted to enter the filename.
-The file must contain 81 integers (0-9) separated by spaces or newlines, representing the Sudoku grid values.
-Example file content
-5 3 0 0 7 0 0 0 0
-6 0 0 1 9 5 0 0 0
-0 9 8 0 0 0 0 6 0
-8 0 0 0 6 0 0 0 3
-4 0 0 8 0 3 0 0 1
-7 0 0 0 2 0 0 0 6
-0 6 0 0 0 0 2 8 0
-0 0 0 4 1 9 0 0 5
-0 0 0 0 8 0 0 7 9
+Constructor: Initializes the grid and prompts the user to input the puzzle. This sets up the initial state of the puzzle.
+menu(): Displays the main menu for input options, guiding the user through the input process.
+readFromConsole(): Reads the Sudoku puzzle values from the console, ensuring valid input through continuous validation checks.
+readFromFile(): Reads the Sudoku puzzle values from a file, with robust error handling to ensure file integrity and proper format.
+setCellValue(int row, int col, int value): Sets a value in the grid, a crucial function for updating the grid during solving.
+getCellValue(int row, int col) const: Gets a value from the grid, essential for checking current grid state.
+displayGrid() const: Displays the Sudoku grid in a formatted manner, allowing users to visually verify the grid before and after solving.
+
+Backtracking Algorithm
+The backtracking algorithm implemented in the SudokuSolver class is the core mechanism used to solve the puzzle. This method involves placing a number in an empty cell, checking if it leads to a valid solution, and recursively attempting to solve the rest of the puzzle. If a conflict arises, the algorithm backtracks by removing the number and trying the next possible number. This ensures all possible configurations are explored, guaranteeing a solution if one exists.
+Enter values for the grid (0 for empty cells):
+Cell[1][1] --> 5
+Cell[1][2] --> 3
+Cell[1][3] --> 0
+...
 
 Example
 Manual Input:
