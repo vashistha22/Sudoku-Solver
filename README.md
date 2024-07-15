@@ -11,7 +11,7 @@ Backtracking Algorithm: Utilizes an efficient recursive backtracking algorithm t
 
 Installation
 1. Clone the repository:
-   git clone https://github.com/your-username/sudoku-solver.git
+   git clone https://github.com/vashistha22/sudoku-solver.git
 2. Navigate to the project directory:
    cd sudoku-solver
 Usage
